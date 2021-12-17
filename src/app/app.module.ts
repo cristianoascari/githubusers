@@ -22,13 +22,15 @@ import { AppRoutingModule } from './app-routing.module';
 
 // App components.
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLoader(http); }
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserAnimationsModule,

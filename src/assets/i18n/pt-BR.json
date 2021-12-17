@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "language": {
+      "language": "Idioma"
+    },
+    "theme": {
+      "dark": "Claro",
+      "light": "Escuro",
+      "theme": "Tema"
+    }
+  }
+}

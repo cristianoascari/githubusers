@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+  <img class="img-logo" src="assets/images/github.png">
+
+  <span class="spn-logo" (click)="goHome()">GithubUsers</span>
+
+  <span class="row-spacer"></span>
+
+  <button mat-icon-button [matMenuTriggerFor]="mainMenu">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-menu #mainMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="mainMenuLanguages">
+    {{'menu.language.language' | translate}}
+  </button>
+
+  <button mat-menu-item [matMenuTriggerFor]="mainMenuThemes">
+    {{'menu.theme.theme' | translate}}
+  </button>
+</mat-menu>
+
+<mat-menu #mainMenuLanguages="matMenu">
+  <button
+    *ngFor="let menu of menuLanguages.children; let i = index;"
+    (click)="changeLanguage(menu.id, $event)"
+    mat-menu-item
+  >
+    <span *ngIf="curLang === menu.id" class="material-icons">arrow_right</span>
+    {{menu.name}}
+  </button>
+</mat-menu>
+
+<mat-menu #mainMenuThemes="matMenu">
+  <button
+    *ngFor="let menu of menuThemes.children; let i = index;"
+    (click)="changeTheme(menu.id, $event)"
+    mat-menu-item
+  >
+    <span *ngIf="curTheme === menu.id" class="material-icons">arrow_right</span>
+    {{menu.name}}
+  </button>
+</mat-menu>

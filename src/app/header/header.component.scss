@@ -1,0 +1,18 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.img-logo {
+  margin: -3px 5px 0 0;
+  width: 30px;
+}
+
+.spn-logo {
+  cursor: pointer;
+}
+
+.mat-menu-item {
+  display: flex;
+
+  span {
+    margin: 12px 0 0 -10px;
+  }
+}

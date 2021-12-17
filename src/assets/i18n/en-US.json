@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "language": {
+      "language": "Language"
+    },
+    "theme": {
+      "dark": "Dark",
+      "light": "Light",
+      "theme": "Theme"
+    }
+  }
+}
