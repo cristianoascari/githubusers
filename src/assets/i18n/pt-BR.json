@@ -1,4 +1,7 @@
 {
+  "errors": {
+    "page_not_found": "Página não localizada"
+  },
   "menu": {
     "language": {
       "language": "Idioma"
@@ -8,5 +11,8 @@
       "light": "Escuro",
       "theme": "Tema"
     }
+  },
+  "operations": {
+    "go_home": "Ir para o início"
   }
 }

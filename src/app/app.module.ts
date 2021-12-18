@@ -18,11 +18,16 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // App routing.
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+
+// App modules.
+import { NotFoundModule } from 'src/app/not-found/not-found.module';
+import { ProfileModule } from 'src/app/profile/profile.module';
+import { UsersModule } from 'src/app/users/users.module';
 
 // App components.
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { AppComponent } from 'src/app/app.component';
+import { HeaderComponent } from 'src/app/header/header.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLoader(http); }
@@ -54,6 +59,10 @@ export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLo
     }),
 
     AppRoutingModule,
+
+    NotFoundModule,
+    ProfileModule,
+    UsersModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
