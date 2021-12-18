@@ -18,7 +18,7 @@
     {{'errors.no_results' | translate}}
   </p>
 
-  <p *ngIf="isSearching">
+  <p *ngIf="searchValue && isSearching">
     {{'search.searching' | translate}}
   </p>
 </section>

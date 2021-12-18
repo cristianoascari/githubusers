@@ -36,7 +36,11 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.searchValue) {
-      this.searchUsers();
+      if (this.searchValue === 'null') {
+        this.clearSearch();
+      } else {
+        this.searchUsers();
+      }
     } else {
       this.getUsers();
     }
@@ -60,7 +64,9 @@ export class UsersComponent implements OnInit {
       this.clearSearch();
     } else {
       this.isSearching = true;
-      sessionStorage.setItem('s', this.searchValue);
+      if (this.searchValue) {
+        sessionStorage.setItem('s', this.searchValue);
+      }
 
       if (clearResults) {
         this.users = [];
@@ -84,6 +90,7 @@ export class UsersComponent implements OnInit {
   public clearSearch(): void {
     this.searchValue = '';
     this.totalResults = 0;
+    this.isSearching = false;
     sessionStorage.removeItem('s');
     this.getUsers();
   }

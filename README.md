@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## COMENTÁRIOS
+
+Devido ao pouco tempo (até consegui mais do que imaginava!) não me procupei muito com o layout. Procurei usar os recursos do Angular Material. Também não fiz uso de outros
+recursos do Angular, como directives, pipes e interceptors.
+
+Implementei um infinite scroll no resultado da busca por usuário. Devido a limitação de consultas da API do Github, a busca é executada apenas ao pressionar o enter.
+
+Certamente há alguns erros que passaram despercebidos e alguns itens que poderiam ser melhorados.
+
+
