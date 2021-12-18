@@ -13,6 +13,10 @@
     }
   },
   "operations": {
-    "go_home": "Go to home"
+    "go_home": "Go to home",
+    "list": "List",
+    "scroll_top": "Scroll to top",
+    "view": "View",
+    "view_profile": "View profile"
   }
 }

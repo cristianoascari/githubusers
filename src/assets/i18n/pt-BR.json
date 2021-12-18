@@ -13,6 +13,10 @@
     }
   },
   "operations": {
-    "go_home": "Ir para o início"
+    "go_home": "Ir para o início",
+    "list": "Listar",
+    "scroll_top": "Voltar ao topo",
+    "view": "Visualizar",
+    "view_profile": "Ver perfil"
   }
 }
