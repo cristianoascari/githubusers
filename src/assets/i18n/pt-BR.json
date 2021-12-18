@@ -1,6 +1,8 @@
 {
   "errors": {
-    "page_not_found": "Página não localizada"
+    "no_results": "Nenhum usuário localizado",
+    "page_not_found": "Página não localizada",
+    "user_not_found": "Usuário não localizado"
   },
   "menu": {
     "language": {
@@ -24,6 +26,8 @@
     "list": "Lista"
   },
   "search": {
+    "result": "Resultado",
+    "results": "Resultados",
     "search_users": "Localizar usuários"
   }
 }

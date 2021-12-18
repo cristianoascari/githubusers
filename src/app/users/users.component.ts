@@ -90,4 +90,9 @@ export class UsersComponent implements OnInit {
   public changeViewMode(mode: string): void {
     this.viewMode = mode;
   }
+
+  public getTotalText(): string {
+    const text: string = this.totalResults > 1 ? 'search.results' : 'search.result';
+    return this.totalResults + ' ' + (this.translate.instant(text)).toLowerCase();
+  }
 }

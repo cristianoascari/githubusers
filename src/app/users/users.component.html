@@ -11,10 +11,10 @@
   </mat-form-field>
 
   <p *ngIf="searchValue && totalResults > 0" style="text-align: center;">
-    {{totalResults}} {{totalResults > 1 ? 'resultados' : 'resultado'}}
+    {{getTotalText()}}
   </p>
   <p *ngIf="searchValue && totalResults === 0">
-    Nenhum usuário localizado
+    {{'errors.no_results' | translate}}
   </p>
 </section>
 
