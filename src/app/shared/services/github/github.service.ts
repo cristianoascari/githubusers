@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 // App models.
-import { IGithubUser, IGithubSearch } from 'src/app/shared/models';
+import { IGithubRepository, IGithubSearch, IGithubUser } from 'src/app/shared/models';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +28,9 @@ export class GithubService {
 
   public searchUsers(q: string, page: number): Observable<IGithubSearch> {
     return this.http.get<IGithubSearch>(`${this.apiSearchURL}?q=${q}&page=${page}`);
+  }
+
+  public getUserRepositories(userLogin: string): Observable<IGithubRepository[]> {
+    return this.http.get<IGithubRepository[]>(`https://api.github.com/users/${userLogin}/repos`);
   }
 }

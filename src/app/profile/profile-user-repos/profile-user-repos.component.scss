@@ -1,0 +1,11 @@
+.repo-tags {
+  display: flex;
+  font-size: small;
+  margin-bottom: 20px;
+  opacity: .6;
+
+  .forks-icon {
+    font-size: 14px;
+    margin-top: 2px;
+  }
+}

@@ -1,0 +1,33 @@
+.user-data {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .user-avatar {
+    border-radius: 50%;
+    width: 290px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  p.p-small {
+    font-size: .8rem;
+  }
+
+  .user-follow,
+  .user-location,
+  .user-url {
+    display: flex;
+
+    .spn-ico {
+      margin-top: -3px;
+    }
+  }
+
+  .spn-count {
+    font-weight: bold;
+  }
+}

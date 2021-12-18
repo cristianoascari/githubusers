@@ -19,7 +19,7 @@ import { GithubService } from 'src/app/shared/services';
 export class UsersComponent implements OnInit {
   public users: IGithubUser[] = [];
 
-  public viewMode: string = 'grid';
+  public viewMode: string = sessionStorage.getItem('v') || 'grid';
 
   public searchPage: number = 0;
   public searchValue: any = sessionStorage.getItem('s');
@@ -89,6 +89,7 @@ export class UsersComponent implements OnInit {
 
   public changeViewMode(mode: string): void {
     this.viewMode = mode;
+    sessionStorage.setItem('v', mode);
   }
 
   public getTotalText(): string {

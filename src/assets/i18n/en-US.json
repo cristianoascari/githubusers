@@ -25,6 +25,13 @@
     "grid": "Grid",
     "list": "List"
   },
+  "profile": {
+    "followers": "Follower(s)",
+    "following": "Following",
+    "packages": "Packages",
+    "projects": "Projects",
+    "repositories": "Repositories"
+  },
   "search": {
     "result": "Result",
     "results": "Results",

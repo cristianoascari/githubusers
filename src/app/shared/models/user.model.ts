@@ -1,3 +1,12 @@
+export interface IGithubRepository {
+  created_at: string;
+  description: string;
+  forks: number;
+  html_url: string;
+  id: number;
+  name: string;
+}
+
 export interface IGithubSearch {
   incomplete_results?: boolean;
   items: IGithubUser[];

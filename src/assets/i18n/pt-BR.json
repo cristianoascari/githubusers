@@ -25,6 +25,13 @@
     "grid": "Grid",
     "list": "Lista"
   },
+  "profile": {
+    "followers": "seguidor(es)",
+    "following": "seguindo",
+    "packages": "Pacotes",
+    "projects": "Projetos",
+    "repositories": "Repositórios"
+  },
   "search": {
     "result": "Resultado",
     "results": "Resultados",

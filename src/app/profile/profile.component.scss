@@ -1,0 +1,13 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.profile-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 290px auto;
+  margin: 30px auto;
+  width: 90%;
+
+  .tab-content {
+    margin: 30px 10px;
+  }
+}

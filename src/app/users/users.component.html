@@ -20,7 +20,7 @@
 
 <!-- View options. -->
 <section *ngIf="!isLoading && totalResults > 0" class="users-options">
-  <mat-button-toggle-group value="grid">
+  <mat-button-toggle-group value="{{viewMode}}">
     <mat-button-toggle value="grid" (click)="changeViewMode('grid')">
       <span class="material-icons">grid_view</span>
       {{'options.grid' | translate}}

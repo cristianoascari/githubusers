@@ -1,0 +1,26 @@
+<section class="user-data">
+  <img src="{{user.avatar_url}}" class="user-avatar">
+
+  <div class="user-name">
+    <h1>{{user.name}}</h1>
+    <p class="p-small">{{user.login}}</p>
+  </div>
+
+  <p *ngIf="user.bio">{{user.bio}}</p>
+
+  <div class="user-follow">
+    <span class="material-icons spn-ico">person</span>
+    <span class="spn-count">{{user.followers}}</span>&nbsp;{{'profile.followers' | translate}} &nbsp;
+    <span class="spn-count">{{user.following}}</span>&nbsp;{{'profile.following' | translate}}
+  </div>
+
+  <div *ngIf="user.location" class="user-location">
+    <span class="material-icons spn-ico">place</span> 
+    {{user.location}}
+  </div>
+
+  <div *ngIf="user.html_url" class="user-url">
+    <span class="material-icons spn-ico">public</span> 
+    <a href="{{user.html_url}}" target="blank">{{user.html_url}}</a>
+  </div>
+</section>
