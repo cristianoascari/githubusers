@@ -1,7 +1,7 @@
 <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
 
 <section *ngIf="!isLoading && user" class="profile-container">
-  <div>
+  <div class="profile-user-data">
     <app-profile-user-data [user]="user"></app-profile-user-data>
   </div>
 

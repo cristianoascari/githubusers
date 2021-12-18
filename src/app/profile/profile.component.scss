@@ -11,3 +11,13 @@
     margin: 30px 10px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .profile-container {
+    grid-template-columns: auto;
+
+    .profile-user-data {
+      text-align: center;
+    }
+  }
+}
