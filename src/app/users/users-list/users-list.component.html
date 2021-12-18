@@ -1,4 +1,10 @@
-<section class="users-list-container">
+<section
+  class="users-list-container"
+  infinite-scroll
+  [infiniteScrollDistance]="3"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="searchUsers()"
+>
   <mat-selection-list *ngFor="let user of users; let i = index;" class="user-list-item" [multiple]="false">
     <mat-list-option (click)="viewUserProfile(user.login)">
       <img src="{{user.avatar_url}}" class="user-avatar"> 

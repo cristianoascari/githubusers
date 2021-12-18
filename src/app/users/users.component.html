@@ -45,5 +45,6 @@
 <app-users-list
   *ngIf="!isLoading && viewMode === 'list'"
   [users]="users"
+  (getMoreUsers)="searchUsers()"
   (viewProfile)="viewUserProfile($event)"
 ></app-users-list>

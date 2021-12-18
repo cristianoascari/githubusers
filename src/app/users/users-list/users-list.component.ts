@@ -15,11 +15,16 @@ import { IGithubUser } from 'src/app/shared/models';
 export class UsersListComponent implements OnInit {
   @Input() users!: IGithubUser[];
 
+  @Output() getMoreUsers: EventEmitter<any> = new EventEmitter<any>();
   @Output() viewProfile: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(public translate: TranslateService) {}
 
   ngOnInit(): void {}
+
+  public searchUsers(): void {
+    this.getMoreUsers.emit();
+  }
 
   public viewUserProfile(login: string): void {
     this.viewProfile.emit(login);
