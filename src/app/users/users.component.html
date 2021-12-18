@@ -1,7 +1,25 @@
 <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
 
+<!-- Search. -->
+<section class="search-container">
+  <mat-form-field class="search-form-field" appearance="fill">
+    <mat-label>{{'search.search_users' | translate}}</mat-label>
+    <input matInput type="text" [(ngModel)]="searchValue" (keyup.enter)="searchUsers(true)">
+    <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <p *ngIf="searchValue && totalResults > 0" style="text-align: center;">
+    {{totalResults}} {{totalResults > 1 ? 'resultados' : 'resultado'}}
+  </p>
+  <p *ngIf="searchValue && totalResults === 0">
+    Nenhum usuário localizado
+  </p>
+</section>
+
 <!-- View options. -->
-<section *ngIf="!isLoading" class="users-options">
+<section *ngIf="!isLoading && totalResults > 0" class="users-options">
   <mat-button-toggle-group value="grid">
     <mat-button-toggle value="grid" (click)="changeViewMode('grid')">
       <span class="material-icons">grid_view</span>
@@ -19,6 +37,7 @@
 <app-users-grid
   *ngIf="!isLoading && viewMode === 'grid'"
   [users]="users"
+  (getMoreUsers)="searchUsers()"
   (viewProfile)="viewUserProfile($event)"
 ></app-users-grid>
 

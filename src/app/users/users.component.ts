@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 // App models.
-import { IGithubUser } from 'src/app/shared/models';
+import { IGithubSearch, IGithubUser } from 'src/app/shared/models';
 
 // App services.
 import { GithubService } from 'src/app/shared/services';
@@ -21,6 +21,10 @@ export class UsersComponent implements OnInit {
 
   public viewMode: string = 'grid';
 
+  public searchPage: number = 0;
+  public searchValue: any = sessionStorage.getItem('s');
+  public totalResults: number = 0;
+
   public isLoading: boolean = true;
 
   constructor(
@@ -30,17 +34,53 @@ export class UsersComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getUsers();
+    if (this.searchValue) {
+      this.searchUsers();
+    } else {
+      this.getUsers();
+    }
   }
 
   private getUsers(): void {
     this.isLoading = true;
 
-    this.githubService.getUsers().subscribe(
-      res => this.users = res as IGithubUser[],
+    this.githubService.getUsers(++this.searchPage).subscribe(
+      res => {
+        this.users = res as IGithubUser[];
+        this.totalResults = this.users.length;
+      },
       err => console.log(err),
       () => setTimeout(() => { this.isLoading = false; }, 500)
     );
+  }
+
+  public searchUsers(clearResults: boolean = false): void {
+    if (clearResults && !this.searchValue) {
+      this.clearSearch();
+    } else {
+      sessionStorage.setItem('s', this.searchValue);
+
+      if (clearResults) {
+        this.users = [];
+      }
+
+      this.githubService.searchUsers(this.searchValue, ++this.searchPage).subscribe(
+        res => {
+          const results: IGithubSearch = res as IGithubSearch;
+          results.items.map(i => this.users.push(i));
+          this.totalResults = results.total_count;
+        },
+        err => console.log(err),
+        () => this.isLoading = false
+      );
+    }
+  }
+
+  public clearSearch(): void {
+    this.searchValue = '';
+    this.totalResults = 0;
+    sessionStorage.removeItem('s');
+    this.getUsers();
   }
 
   public viewUserProfile(userId: string): void {

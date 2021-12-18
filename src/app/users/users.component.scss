@@ -1,5 +1,15 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
+.search-container {
+  margin: 30px auto;
+  max-width: 90%;
+  text-align: center;
+
+  .search-form-field {
+    width: 100%;
+  }
+}
+
 .users-options {
   margin: 20px 0;
   text-align: center;

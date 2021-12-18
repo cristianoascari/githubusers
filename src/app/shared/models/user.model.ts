@@ -1,3 +1,9 @@
+export interface IGithubSearch {
+  incomplete_results?: boolean;
+  items: IGithubUser[];
+  total_count: number;
+}
+
 export interface IGithubUser {
   avatar_url: string;
   bio?: string;

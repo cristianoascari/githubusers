@@ -1,4 +1,10 @@
-<section class="users-container">
+<section
+  class="users-container"
+  infinite-scroll
+  [infiniteScrollDistance]="3"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="searchUsers()"
+>
   <mat-card *ngFor="let user of users; let i = index;" class="user-card">
     <mat-card-content>
       <img src="{{user.avatar_url}}" class="user-avatar">

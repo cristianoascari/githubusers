@@ -22,5 +22,8 @@
   "options": {
     "grid": "Grid",
     "list": "Lista"
+  },
+  "search": {
+    "search_users": "Localizar usuários"
   }
 }

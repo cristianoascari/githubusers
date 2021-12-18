@@ -1,6 +1,7 @@
 // Angular modules.
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
@@ -9,10 +10,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 // Third-party
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -32,14 +35,17 @@ export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLo
   ],
   imports: [
     CommonModule,
+    FormsModule,
 
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
     MatIconModule,
+    MatInputModule,
     MatListModule,
     MatProgressBarModule,
 
+    InfiniteScrollModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
