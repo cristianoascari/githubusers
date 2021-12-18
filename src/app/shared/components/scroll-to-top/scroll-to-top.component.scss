@@ -1,0 +1,13 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.icon-top {
+  cursor: pointer;
+  bottom: 10px;
+  opacity: .6;
+  position: fixed;
+  right: 20px;
+
+  &:hover {
+    opacity: 1;
+  }
+}

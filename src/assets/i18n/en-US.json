@@ -35,6 +35,7 @@
   "search": {
     "result": "Result",
     "results": "Results",
-    "search_users": "Search users"
+    "search_users": "Search users",
+    "searching": "Searching..."
   }
 }

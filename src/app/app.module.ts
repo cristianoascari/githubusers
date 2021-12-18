@@ -28,6 +28,7 @@ import { UsersModule } from 'src/app/users/users.module';
 // App components.
 import { AppComponent } from 'src/app/app.component';
 import { HeaderComponent } from 'src/app/header/header.component';
+import { ScrollToTopComponent } from 'src/app/shared/components/scroll-to-top/scroll-to-top.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLoader(http); }
@@ -35,7 +36,8 @@ export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLo
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    ScrollToTopComponent
   ],
   imports: [
     BrowserAnimationsModule,

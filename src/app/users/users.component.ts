@@ -26,6 +26,7 @@ export class UsersComponent implements OnInit {
   public totalResults: number = 0;
 
   public isLoading: boolean = true;
+  public isSearching: boolean = false;
 
   constructor(
     private githubService: GithubService,
@@ -58,6 +59,7 @@ export class UsersComponent implements OnInit {
     if (clearResults && !this.searchValue) {
       this.clearSearch();
     } else {
+      this.isSearching = true;
       sessionStorage.setItem('s', this.searchValue);
 
       if (clearResults) {
@@ -71,7 +73,10 @@ export class UsersComponent implements OnInit {
           this.totalResults = results.total_count;
         },
         err => console.log(err),
-        () => this.isLoading = false
+        () => {
+          this.isLoading = false;
+          this.isSearching = false;
+        }
       );
     }
   }

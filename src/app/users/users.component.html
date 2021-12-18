@@ -10,11 +10,16 @@
     </button>
   </mat-form-field>
 
-  <p *ngIf="searchValue && totalResults > 0" style="text-align: center;">
+  <p *ngIf="!isSearching && searchValue && totalResults > 0" style="text-align: center;">
     {{getTotalText()}}
   </p>
-  <p *ngIf="searchValue && totalResults === 0">
+
+  <p *ngIf="!isSearching && searchValue && totalResults === 0">
     {{'errors.no_results' | translate}}
+  </p>
+
+  <p *ngIf="isSearching">
+    {{'search.searching' | translate}}
   </p>
 </section>
 

@@ -35,6 +35,7 @@
   "search": {
     "result": "Resultado",
     "results": "Resultados",
-    "search_users": "Localizar usuários"
+    "search_users": "Localizar usuários",
+    "searching": "Pesquisando..."
   }
 }
