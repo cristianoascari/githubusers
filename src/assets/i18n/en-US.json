@@ -18,5 +18,9 @@
     "scroll_top": "Scroll to top",
     "view": "View",
     "view_profile": "View profile"
+  },
+  "options": {
+    "grid": "Grid",
+    "list": "List"
   }
 }

@@ -1,0 +1,32 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.users-list-container {
+  margin: 30px auto;
+  padding-bottom: 40px;
+  max-width: 90%;
+
+  .mat-list-text,
+  ::ng-deep .mat-list-text {
+    display: grid !important;
+    gap: 20px;
+    grid-template-columns: 50px auto auto;
+  }
+
+  .user-list-item {
+    img.user-avatar {
+      border-radius: 50%;
+      width: 40px;
+    }
+
+    span {
+      margin-top: 10px;
+
+      &:last-of-type {
+        font-size: small;
+        font-style: italic;
+        opacity: .6;
+        text-align: right;
+      }
+    }
+  }
+}

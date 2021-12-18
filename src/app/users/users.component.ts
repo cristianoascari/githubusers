@@ -19,6 +19,8 @@ import { GithubService } from 'src/app/shared/services';
 export class UsersComponent implements OnInit {
   public users: IGithubUser[] = [];
 
+  public viewMode: string = 'grid';
+
   public isLoading: boolean = true;
 
   constructor(
@@ -43,5 +45,9 @@ export class UsersComponent implements OnInit {
 
   public viewUserProfile(userId: string): void {
     this.router.navigate(['user/' + userId]);
+  }
+
+  public changeViewMode(mode: string): void {
+    this.viewMode = mode;
   }
 }

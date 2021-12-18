@@ -18,5 +18,9 @@
     "scroll_top": "Voltar ao topo",
     "view": "Visualizar",
     "view_profile": "Ver perfil"
+  },
+  "options": {
+    "grid": "Grid",
+    "list": "Lista"
   }
 }

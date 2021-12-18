@@ -1,0 +1,12 @@
+<section class="users-container">
+  <mat-card *ngFor="let user of users; let i = index;" class="user-card">
+    <mat-card-content>
+      <img src="{{user.avatar_url}}" class="user-avatar">
+      <p>{{user.login}}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button (click)="viewUserProfile(user.login)">{{'operations.view_profile' | translate}}</button>
+    </mat-card-actions>
+  </mat-card>
+</section>

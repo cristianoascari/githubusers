@@ -1,18 +1,30 @@
 <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
 
-<section
-  *ngIf="!isLoading"
-  class="users-container"
+<!-- View options. -->
+<section *ngIf="!isLoading" class="users-options">
+  <mat-button-toggle-group value="grid">
+    <mat-button-toggle value="grid" (click)="changeViewMode('grid')">
+      <span class="material-icons">grid_view</span>
+      {{'options.grid' | translate}}
+    </mat-button-toggle>
 
->
-  <mat-card *ngFor="let user of users; let i = index;" class="user-card">
-    <mat-card-content>
-      <img src="{{user.avatar_url}}" class="user-avatar">
-      <p>{{user.login}}</p>
-    </mat-card-content>
-
-    <mat-card-actions>
-      <button mat-button (click)="viewUserProfile(user.login)">{{'operations.view_profile' | translate}}</button>
-    </mat-card-actions>
-  </mat-card>
+    <mat-button-toggle value="list" (click)="changeViewMode('list')">
+      <span class="material-icons">view_list</span>
+      {{'options.list' | translate}}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
 </section>
+
+<!-- Grid view. -->
+<app-users-grid
+  *ngIf="!isLoading && viewMode === 'grid'"
+  [users]="users"
+  (viewProfile)="viewUserProfile($event)"
+></app-users-grid>
+
+<!-- List view. -->
+<app-users-list
+  *ngIf="!isLoading && viewMode === 'list'"
+  [users]="users"
+  (viewProfile)="viewUserProfile($event)"
+></app-users-list>

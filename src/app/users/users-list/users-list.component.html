@@ -1,0 +1,10 @@
+<section class="users-list-container">
+  <mat-selection-list *ngFor="let user of users; let i = index;" class="user-list-item" [multiple]="false">
+    <mat-list-option (click)="viewUserProfile(user.login)">
+      <img src="{{user.avatar_url}}" class="user-avatar"> 
+      <span>{{user.login}}</span>
+      <span>{{user.url}}</span>
+    </mat-list-option>
+    <mat-divider></mat-divider>
+  </mat-selection-list>
+</section>
