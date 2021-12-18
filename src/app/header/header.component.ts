@@ -5,8 +5,11 @@ import { Router } from '@angular/router';
 // Third-party.
 import { TranslateService } from '@ngx-translate/core';
 
+// App models.
+import { EBroadcast, IUser } from 'src/app/shared/models';
+
 // App services.
-import { LanguageService, NotificationsService } from 'src/app/shared/services';
+import { AuthService, BroadcastService, LanguageService, NotificationsService } from 'src/app/shared/services';
 
 interface IMenu {
   children: IMenuItem[];
@@ -25,12 +28,16 @@ interface IMenuItem {
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public user: IUser|null = this.authService.getLoggedUser();
+
   public curLang: string = this.languageService.getTranslatorLanguage();
   public curTheme: string = 'light';
   public menuLanguages: IMenu = this.buildLanguagesMenu();
   public menuThemes: IMenu = this.buildLanguagesMenu();
 
   constructor(
+    private authService: AuthService,
+    private broadcastService: BroadcastService,
     private languageService: LanguageService,
     private notificationsService: NotificationsService,
     private router: Router,
@@ -38,6 +45,8 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.subscribeToBroadcasts();
+
     setTimeout(() => {
       this.menuLanguages = this.buildLanguagesMenu();
       this.menuThemes = this.buildThemeMenu();
@@ -83,7 +92,20 @@ export class HeaderComponent implements OnInit {
     };
   }
 
+  private subscribeToBroadcasts(): void {
+    this.broadcastService.events.subscribe(ev => {
+      switch (ev.key) {
+        case EBroadcast.Login: this.user = ev.value; break;
+        case EBroadcast.Logout: this.user = null; break;
+      }
+    });
+  }
+
   public goHome(): void {
     this.router.navigate(['']);
+  }
+
+  public logoutUser(): void {
+    this.authService.logout();
   }
 }

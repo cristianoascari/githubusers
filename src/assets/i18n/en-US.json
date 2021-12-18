@@ -1,4 +1,19 @@
 {
+  "auth": {
+    "authentication": "Authentication",
+    "email": "E-Mail address",
+    "errors": {
+      "email_invalid": "Invalid e-mail address",
+      "email_required": "E-Mail is required",
+      "password_minlength": "Password should have at least 5 characters",
+      "password_required": "Password is required"
+    },
+    "login": "Login",
+    "logout": "Logout",
+    "password": "Password",
+    "tip": "Any e-mail and any passwords (at least 5 characters)",
+    "username": "User name"
+  },
   "errors": {
     "no_results": "No users found",
     "page_not_found": "Page not found",

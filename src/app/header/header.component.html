@@ -18,6 +18,12 @@
   <button mat-menu-item [matMenuTriggerFor]="mainMenuThemes">
     {{'menu.theme.theme' | translate}}
   </button>
+
+  <mat-divider *ngIf="user && user.email"></mat-divider>
+
+  <button *ngIf="user && user.email" mat-menu-item (click)="logoutUser()">
+    {{'auth.logout' | translate}}
+  </button>
 </mat-menu>
 
 <mat-menu #mainMenuLanguages="matMenu">

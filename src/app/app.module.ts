@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Angular material.
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -21,6 +23,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
 // App modules.
+import { AuthModule } from 'src/app/auth/auth.module';
 import { NotFoundModule } from 'src/app/not-found/not-found.module';
 import { ProfileModule } from 'src/app/profile/profile.module';
 import { UsersModule } from 'src/app/users/users.module';
@@ -43,9 +46,11 @@ export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLo
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
 
     MatButtonModule,
     MatCardModule,
+    MatDividerModule,
     MatIconModule,
     MatMenuModule,
     MatSnackBarModule,
@@ -62,6 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLo
 
     AppRoutingModule,
 
+    AuthModule,
     NotFoundModule,
     ProfileModule,
     UsersModule

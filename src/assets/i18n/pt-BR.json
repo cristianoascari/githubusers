@@ -1,4 +1,19 @@
 {
+  "auth": {
+    "authentication": "Autenticação",
+    "email": "Endereço de e-Mail",
+    "errors": {
+      "email_invalid": "Endereço de e-Mail inválido",
+      "email_required": "O e-Mail é obrigatório",
+      "password_minlength": "A senha deve ter ao menos 5 caracteres",
+      "password_required": "A senha é obrigatória"
+    },
+    "login": "Login",
+    "logout": "Sair",
+    "password": "Senha",
+    "tip": "Qualquer e-mail e qualquer senha com ao menos 5 caracteres.",
+    "username": "Nome de usuário"
+  },
   "errors": {
     "no_results": "Nenhum usuário localizado",
     "page_not_found": "Página não localizada",

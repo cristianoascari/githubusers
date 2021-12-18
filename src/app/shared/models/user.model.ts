@@ -46,3 +46,8 @@ export interface IGithubUser {
   updated_at?: string;
   url: string;
 }
+
+export interface IUser {
+  name: string;
+  email: string;
+}
